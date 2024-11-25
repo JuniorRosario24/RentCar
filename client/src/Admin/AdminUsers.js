@@ -42,7 +42,7 @@ const AdminUsers = () => {
   // Eliminar un usuario
   const handleDeleteUser = async (userId) => {
     try {
-      await axios.delete(/api/users/${userId});
+      await axios.delete(`/api/users/${userId}`); // Corrección: Uso de backticks
       setUsers(users.filter((user) => user._id !== userId));
     } catch (error) {
       console.error('Error al eliminar el usuario:', error);
@@ -99,4 +99,5 @@ const AdminUsers = () => {
   );
 };
 
-export default AdminUsers;
+export default AdminUsers;
+
